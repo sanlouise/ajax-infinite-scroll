@@ -1,11 +1,11 @@
 <!--Rendering more posts by appending them to #my-posts block-->
 $('#my-posts').append('<%= j render @posts %>');
 <!--Check to see if there are more pages-->
-<% if @posts.next_page %>
+    <% if @posts.next_page %>
 <!--Replace the current pagination block with new pagination-->
-  $('.pagination').replaceWith('<%= j will_paginate @posts %>');
-<% else %>
+        $('.pagination').replaceWith('<%= j will_paginate @posts %>');
+    <% else %>
 <!--Remove the pagination controls and unbind the scroll event from window-->
-  $(window).off('scroll');
-  $('.pagination').remove();
+      $(window).off('scroll');
+      $('.pagination').remove();
 <% end %>
